@@ -1,0 +1,12 @@
+.gallery{
+    &-list{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);   
+        gap: 32px;
+    }
+    &-column{
+        height: 240px;
+        border-radius: 16px;
+        overflow: hidden;
+    }
+}

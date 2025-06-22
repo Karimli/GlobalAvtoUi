@@ -1,0 +1,43 @@
+.section{
+    &-slide{
+
+    }
+    &-greyscale{
+        background-color: $grey;
+        border-radius: 48px;
+        padding: 56px 0;
+    }
+    &-banner{
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 40px;
+        height: 500px;
+    }
+    &-thumbnail{
+        display: flex;
+        align-items: flex-start;
+        margin: 0 -20px;
+    }
+    &-connection{
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 124px 0;
+        margin: 0 -20px;
+    }
+    &-contact{
+        
+    }
+    &-space{
+        padding-bottom: 96px;
+    }
+    &-info{
+        background-color: $grey;
+        padding: 64px 0 96px 0;
+        margin: 0 -20px;
+    }
+}

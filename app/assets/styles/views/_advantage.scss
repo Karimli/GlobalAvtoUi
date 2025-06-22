@@ -1,0 +1,46 @@
+.advantage{
+    &-banner{
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 48px;
+        padding: 96px 0;
+    }
+    &-container{
+        display: flex;
+        align-items: center;
+    }
+    &-circle{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 25%;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        border: 1px solid $greyscale-600;
+        padding: 0 5%;
+       &:not(:first-child) {
+            margin-left: -5%;
+          }
+    }
+    &-icon{        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 88px;
+        height: 88px;
+        border-radius: 50%;
+        background-color: change-color($color: $base-white, $alpha: 0.05);
+        font-size: 40px;
+        color: $main-600;
+    }
+    &-title{
+        max-width: 150px;
+        font-size: 20px;
+        line-height: 28px;
+        color: $base-white;
+        text-align: center;
+        margin-top: 20px;
+    }
+}

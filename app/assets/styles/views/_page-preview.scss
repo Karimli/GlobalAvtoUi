@@ -1,0 +1,81 @@
+
+
+.page-url-list {
+  padding: 0;
+  margin: 0;
+
+  &-item {
+    list-style-type: none;
+
+    &[data-status="waiting"] {
+      .page-url-list-item--link {
+        pointer-events: none;
+        &::before {
+          content: "⌛";
+        }
+      }
+    }
+    &[data-status="active"] {
+      .page-url-list-item--link {
+        &::before {
+          content: "📌";
+        }
+      }
+    }
+    &[data-status="completed"] {
+      .page-url-list-item--link {
+        &::before {
+          content: "✅";
+        }
+      }
+    }
+
+    &--link {
+      display: flex;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 500;
+      color: #000000;
+      padding: 10px 14px;
+      border: 1px solid #D8D8D8;
+      border-bottom: 0;
+      background-color: #fff;
+      text-decoration: none;
+      transition: all 300ms ease-in-out;
+      &::before{
+        font-size: 20px;
+        line-height: 24px;
+        margin-right: 8px;
+      }
+      &:hover {
+        background-color: #f7f7f9;
+      }
+    }
+
+    &:first-child {
+      .page-url-list-item--link {
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+      }
+    }
+
+    &:last-child {
+      .page-url-list-item--link {
+        border-bottom: 1px solid #D8D8D8;
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+      }
+    }
+  }
+}
+
+.page-logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  background-color: #000000;
+  border-radius: 24px;
+  padding: 20px 40px;
+  margin: 24px auto;
+}

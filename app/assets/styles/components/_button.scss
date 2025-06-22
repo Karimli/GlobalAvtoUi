@@ -1,0 +1,122 @@
+.btn{
+    display: inline-block;
+    border: 0 solid transparent;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none !important;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 200ms ease-in-out, color 200ms ease-in-out, border-color 200ms ease-in-out;
+    @include focus {
+        outline: 0 !important;
+        box-shadow: none;
+    }
+    &-primary{
+        background-color: $greyscale-900;
+        color: $base-white;
+    }
+    &-light{
+        background-color: $base-white;
+        color: $greyscale-700;
+    }
+    //Style
+    &-rounded{
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: $font-weight-semibold;
+        border-radius: 32px;
+        padding: 12px 24px;
+    }
+    &-circle{
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        font-size: 24px;
+    }
+    //Settings
+    &-fluid {
+        display: block;
+        width: 100%;
+    }
+    &-width-lg{
+        min-width: 300px;
+    }
+    &:disabled, &.disabled{
+        background-color: $greyscale-300;
+        color: $greyscale-700;
+        cursor: not-allowed;
+    }
+}
+
+.btn-contact{
+    min-width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    background-color: $greyscale-900;
+    border-radius: 40px 0 0 40px;
+    padding: 12px;
+    transition: min-width 300ms ease-in-out;
+    text-decoration: none;
+    z-index: 99;
+    &:hover{
+        min-width: 220px;
+        .btn-contact-label{
+            color: $whatsapp-color;
+        }
+    }
+    &-icon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        font-size: 24px;
+        color: $whatsapp-color;
+        margin-right: 8px;
+    }
+    &-label{
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: $font-weight-medium;
+        color: $base-white;
+        transition: color 200ms ease-in-out;
+    }
+}
+.social{
+    &-list{
+        display: flex;
+        align-items: center;
+        &.placement-right{
+            .social-link{
+                margin-left: 10px;
+            }
+        }
+        &.placement-left{
+            .social-link{
+                margin-right: 10px;
+            }
+        }
+    }
+    &-link{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: $base-white;
+        border-radius: 50%;
+        font-size: 20px;
+        color: $greyscale-900;
+        text-decoration: none;
+        transition: color 200ms ease-in-out, background-color 200ms ease-in-out;
+        &:hover{
+            background-color: $main-600;
+            color: $base-white;
+        }
+    }
+}

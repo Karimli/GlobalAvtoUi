@@ -1,0 +1,11 @@
+.base-container{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 20px 20px;
+}
+
+.root-container{
+    flex: 1;
+    padding: 40px 0 64px 0;
+}

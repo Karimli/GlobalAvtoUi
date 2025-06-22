@@ -1,0 +1,60 @@
+.custom-radio {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+
+    input[type="radio"] {
+        -webkit-appearance: none;
+        position: absolute;
+        opacity: 0;
+
+        //Checked
+        &:checked {
+            &~.custom-radio-control {
+                border-color: $greyscale-900;
+                background-color: $greyscale-900;
+                &::before{
+                                background-color: $greyscale-100;
+                }
+            }
+        }
+    }
+
+    &-control {
+        position: relative;
+        flex: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid $greyscale-200;
+        background-color: $greyscale-100;
+        transition: border-color 200ms ease-in-out, background-color 200ms ease-in-out;
+        &::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background-color: $greyscale-200;
+            border-radius: 50%;
+            @include centerer();
+            transition: background-color 200ms ease-in-out;
+        }
+    }
+
+    &-label {
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: $font-weight-semibold;
+        color: $greyscale-700;
+        margin-left: 8px;
+    }
+}
+
+.radio-group {
+    .custom-radio {
+        margin-right: 24px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

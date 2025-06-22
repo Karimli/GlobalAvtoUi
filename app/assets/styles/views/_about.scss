@@ -1,0 +1,46 @@
+.info-column {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 96px;
+
+    &:nth-child(odd) {
+        .info-column-img{
+            order: 1;
+            margin-right: 32px;
+        }
+        .info-column-content{
+            order: 2;
+        }
+    }
+
+    &:nth-child(even) {
+        .info-column-img{
+            order: 2;
+            margin-left: 32px;
+        }
+        .info-column-content{
+            order: 1;
+        }
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &-img {
+        width: calc(60% - 32px);
+        height: 420px;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    &-content {
+        width: 40%;
+    }
+
+    &-description{
+        font-size: 16px;
+        line-height: 28px;
+        color: $greyscale-500;
+    }
+}

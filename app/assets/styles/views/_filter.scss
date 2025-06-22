@@ -1,0 +1,36 @@
+.filter {
+    &-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 40px;
+    }
+
+    &-column {
+        display: flex;
+        align-items: center;
+        &.size-lg {
+            min-width: 460px;
+        }
+
+        &.size-sm {
+            min-width: 210px;
+        }
+    }
+}
+
+.color-pallete{
+    display: flex;
+    align-items: center;
+    &-index{
+        flex: none;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        border: 1px solid $greyscale-400;
+        margin-left: 8px;
+        &:first-child{
+            margin-left: 0;
+        }
+    }
+}

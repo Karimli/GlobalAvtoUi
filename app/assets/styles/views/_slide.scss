@@ -1,0 +1,102 @@
+.main-slide{
+    position: relative;
+    min-height: calc(100vh - 144px);
+    &-column{
+        min-height: calc(100vh - 144px);
+        display: flex;
+        flex-direction: column;
+        padding: 32px 0 88px 0;
+    }
+    &-title{
+        max-width: 740px;
+        border-left: 3px solid $main-600;
+        font-family: $secondary-font;
+        font-size: 48px;
+        line-height: 56px;
+        font-weight: $font-weight-bold;
+        text-transform: uppercase;
+        padding-left: 20px;
+        margin-bottom: 0;
+    }
+    &-img{
+        flex: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 865px;
+        max-height: 450px;
+        margin: auto;
+    }
+    &-slogan{
+        font-family: $secondary-font;
+        font-size: clamp(2rem, 14vw, 14vw);
+        font-weight: $font-weight-bold;
+        color: change-color($color: $greyscale-50, $alpha: 0.8);
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #EEE;
+        white-space: nowrap;
+        @include centerer();
+        z-index: -1;
+        user-select: none;
+    }
+    &-navigation{
+        position: absolute;
+        bottom: 24px;
+        right: 0;
+        width: 184px;
+        display: flex;
+        flex-direction: column;
+        z-index: 2;
+        &-control{
+            display: flex;
+            align-items: center;
+        }
+        &-btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 88px;
+            height: 40px;
+            border: 1px solid $greyscale-900;
+            border-radius: 32px;
+            font-size: 24px;
+            color: $greyscale-900;
+            margin-left: 4px;
+            transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+            cursor: pointer;
+            &:hover{
+                background-color: $greyscale-900;
+                color: $base-white;
+            }
+        }
+    }
+    &-pagination{
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        .swiper-pagination-bullet{
+            position: relative;
+            flex: 1;
+            height: 2px;
+            border-radius: 0;
+            background-color: $greyscale-300;
+            opacity: 1 !important;
+            margin: 0 !important;
+            &::before{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: $greyscale-900;
+                transition: width 500ms ease-in-out;
+            }
+            &-active{
+                &::before{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

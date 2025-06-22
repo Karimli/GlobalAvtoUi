@@ -1,0 +1,196 @@
+//----------------------------------------------------------------------------------------------
+//************************************* Begin::Mixins ****************************************//
+//----------------------------------------------------------------------------------------------
+
+$spaceamounts: (0, 4, 6, 8, 12, 16, 20, 24, 32, 40, 48, 56, 64, 72, 80); // Adjust this to include the pixel amounts you need.
+$sides: (top, bottom, left, right); // Leave this variable alone
+
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .m-#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: #{$space}px !important;
+    }
+
+    .p-#{str-slice($side, 0, 1)}-#{$space} {
+      padding-#{$side}: #{$space}px !important;
+    }
+  }
+}
+
+//Font-size
+@for $i from 0 through 25 {
+  .fs-#{8 + $i*2} {
+    font-size: #{8+$i*2}px !important;
+  }
+}
+
+//Placeholder Mixin
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content
+  }
+
+  &:-moz-placeholder {
+    @content
+  }
+
+  &::-moz-placeholder {
+    @content
+  }
+
+  &:-ms-input-placeholder {
+    @content
+  }
+}
+
+;
+
+
+//Focus
+@mixin focus () {
+  &:focus {
+    @content
+  }
+}
+
+;
+
+//Truncate Text
+@mixin truncate($width) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: $width;
+}
+
+//Line Clamp
+@mixin line-clamp($lines) {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+}
+
+
+//Center
+@mixin centerer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+@mixin breakpoint($point) {
+  @if $point==container-xxl {
+    @media (min-width: 1728px) {
+      @content ;
+    }
+  }
+
+  @if $point==container-xl {
+    @media (min-width: 1480px) {
+      @content ;
+    }
+  }
+
+  @if $point==container-base {
+    @media (min-width: 1360px) {
+      @content ;
+    }
+  }
+
+  @if $point==container-lg {
+    @media (min-width: 1200px) {
+      @content ;
+    }
+  }
+
+  @if $point==container-lgmax {
+    @media (max-width: 1199px) {
+      @content ;
+    }
+  }
+
+
+  @if $point==desktop-lg {
+    @media (min-width: 1024px) {
+      @content ;
+    }
+  }
+
+  @if $point==desktop-lgmax{
+    @media (max-width: 1023px) {
+      @content ;
+    }
+  }
+
+  @if $point==desktop {
+    @media (min-width: 992px) {
+      @content ;
+    }
+  }
+
+  @if $point==desktopmax {
+    @media (max-width: 991px) {
+      @content ;
+    }
+  }
+
+  @else if $point==laptop {
+    @media (min-width: 768px) {
+      @content ;
+    }
+  }
+
+  @else if $point==laptopmax {
+    @media (max-width: 767px) {
+      @content ;
+    }
+  }
+
+  @else if $point==tablet {
+    @media (min-width: 576px) {
+      @content ;
+    }
+  }
+
+
+  @else if $point==mobileonly {
+    @media (max-width: 375px) {
+      @content ;
+    }
+  }
+}
+
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+
+  // For Google Chrome
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+    background-clip: padding-box;
+    border: 8px solid rgba(0, 0, 0, 0);
+    border-left: none;
+    border-right: none;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  // For Internet Explorer
+  & {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
+
+//----------------------------------------------------------------------------------------------
+//************************************* Begin::Mixins ****************************************//
+//----------------------------------------------------------------------------------------------

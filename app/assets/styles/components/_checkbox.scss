@@ -1,0 +1,59 @@
+.custom-checkbox {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    input[type="checkbox"] {
+        -webkit-appearance: none;
+        position: absolute;
+        opacity: 0;
+
+        //Checked
+        &:checked{
+            &~.custom-checkbox-control {
+                border-color: $main-600;
+                background-color: $main-600;
+                &::after {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+    &-control{
+        position: relative;
+        display: block;
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+        border: 1px solid $greyscale-300;
+        background-color: transparent;
+        transition: border-color 200ms ease-in-out, background-color 200ms ease-in-out;
+        cursor: pointer;
+        &::after{
+            content: "\F012C";
+            font-family: "Material Design Icons";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: $base-white;
+            width: 100%;
+            height: 100%;
+            transform: scale(0);
+            transition: transform 200ms ease-in-out;
+        }
+    }
+    &-label{
+        flex: 1;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: $font-weight-medium;
+        color: $greyscale-600;
+        margin-left: 8px;
+    }
+}

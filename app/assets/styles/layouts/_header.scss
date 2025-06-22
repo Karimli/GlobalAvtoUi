@@ -1,0 +1,144 @@
+.header {
+    &-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $greyscale-900;
+        border-radius: 64px;
+        padding: 8px 24px;
+    }
+
+    &-brand {
+        flex: 0.5;
+    }
+
+    &-navigation {
+        flex: 2;
+
+        &-list {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &-link {
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: $font-weight-medium;
+            color: $greyscale-200;
+            margin: 0 12px;
+            text-decoration: none;
+        }
+    }
+
+    &-action {
+        flex: 0.5;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    &-logo {
+        display: flex;
+        width: 55px;
+        height: 64px;
+        text-decoration: none;
+    }
+}
+
+.language {
+    position: relative;
+    z-index: 2;
+
+    &:hover {
+        .language-active {
+            background-color: $greyscale-200;
+            color: $greyscale-900;
+        }
+        .language-dropdown {
+            top: 100%;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &-active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border: 2px solid $greyscale-200;
+        border-radius: 50%;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: $font-weight-bold;
+        color: $greyscale-200;
+        transition: color 200ms ease-in-out, background-color 200ms ease-in-out;
+        cursor: pointer;
+    }
+
+    &-dropdown {
+        position: absolute;
+        top: calc(100% + 4px);
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+        padding-top: 8px;
+        transition: top 200ms ease-in-out, opacity 200ms ease-in-out, visibility 200ms ease-in-out;
+
+        &-container {
+            box-shadow: 0px 0px 30px 0px rgba(187, 187, 187, 0.5);
+            border-radius: 4px;
+            z-index: 9;
+        }
+
+        &-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $base-white;
+            font-size: 14px;
+            line-height: 24px;
+            font-weight: $font-weight-bold;
+            color: $greyscale-900;
+            padding: 6px 0;
+            text-align: center;
+            text-decoration: none;
+            transition: color 200ms ease-in-out, background-color 200ms ease-in-out;
+
+            &:first-child {
+                border-radius: 4px 4px 0 0;
+            }
+
+            &:last-child {
+                border-radius: 0 0 4px 4px;
+            }
+
+            &:only-child {
+                border-radius: 4px;
+            }
+
+            &:hover {
+                background-color: $main-100;
+            }
+        }
+    }
+}
+
+.wishlist-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    color: $greyscale-200;
+    margin-right: 20px;
+    text-decoration: none;
+    transition: color 200ms ease-in-out;
+
+    &:hover {
+        color: $softred;
+    }
+}

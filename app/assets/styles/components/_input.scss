@@ -1,0 +1,111 @@
+.form-field {
+    position: relative;
+    &.has-icon {
+        .form-control {
+            padding-right: 48px;
+        }
+    }
+
+    // &.has-error {
+    //     .form-control {
+    //         border-color: $danger-color !important;
+    //     }
+
+    //     .form-label {
+    //         color: $danger-color !important;
+    //     }
+    // }
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    background-color: $base-white;
+    border: 1px solid $greyscale-300;
+    border-radius: 32px;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: $font-weight-semibold;
+    color: $greyscale-900;
+    padding: 12px 16px;
+    transition: border-color 200ms ease-in-out, box-shadow 200ms ease-in-out;
+    box-shadow: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    touch-action: manipulation;
+
+    @include focus {
+        outline: 0;
+        border-color: $greyscale-900;
+        @include placeholder {
+            opacity: 0;
+        }
+    }
+
+    @include placeholder {
+        color: $greyscale-500;
+        transition: opacity 200ms ease-in-out;
+    }
+    &:disabled{
+        background-color: change-color($color: $greyscale-100, $alpha: 0.2);
+        cursor: not-allowed;
+    }
+    &.theme-light{
+        background-color: transparent;
+        color: $base-white;
+        @include focus {
+            outline: 0;
+            border-color: $base-white ;
+        }
+    }
+}
+
+.form-label{
+    display: inline-block;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: $font-weight-semibold;
+    color: $greyscale-500;
+}
+
+.form-icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    color: $greyscale-500;
+    pointer-events: none;
+}
+
+
+// .form-error {
+//     display: block;
+//     font-size: 12px;
+//     line-height: 16px;
+//     font-weight: $font-weight-medium;
+//     color: $danger-color;
+//     margin-top: 4px;
+// }
+
+option[value=""][disabled] {
+    color: red;
+}
+
+.no-resize {
+    resize: none !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}

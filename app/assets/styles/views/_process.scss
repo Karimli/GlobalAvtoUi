@@ -1,0 +1,39 @@
+.process{
+    &-container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    &-column{
+        display: flex;
+        align-items: center;
+    }
+    &-index{
+        flex: none;
+        width: 128px;
+        font-family: $secondary-font;
+        font-size: 96px;
+        line-height: 96px;
+        font-weight: $font-weight-bold;
+        color: change-color($color: $base-dark, $alpha: 0.1)
+    }
+    &-info{
+        display: flex;
+        flex-direction: column;
+        margin-left: 12px;
+    }
+    &-title{
+        font-family: $secondary-font;
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: $font-weight-semibold;
+        color: $greyscale-900;
+    }
+    &-subtitle{
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: $font-weight-light;
+        color: $greyscale-800;
+        margin-top: 4px;
+    }
+}
