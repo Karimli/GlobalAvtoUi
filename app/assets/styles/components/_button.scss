@@ -9,7 +9,6 @@
     transition: background-color 200ms ease-in-out, color 200ms ease-in-out, border-color 200ms ease-in-out;
     @include focus {
         outline: 0 !important;
-        box-shadow: none;
     }
     &-primary{
         background-color: $greyscale-900;
@@ -18,6 +17,15 @@
     &-light{
         background-color: $base-white;
         color: $greyscale-700;
+    }
+    &-bordered{
+        box-shadow: inset 0 0 0 1px $base-dark;
+        background-color: $base-white;
+        color: $greyscale-900;
+        &:hover{
+            background-color: $base-dark;
+            color: $base-white;
+        }
     }
     //Style
     &-rounded{
